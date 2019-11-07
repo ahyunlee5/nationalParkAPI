@@ -12,15 +12,19 @@
         <h1>Find the desired National Park</h1>
         <form id='js-form'>
             <label for='search-term'>Search Parks</label>
-            <input type='text' name='search-term' id='js-search-term' required>
+            <input type='text' name='search-term' id='js-search-term'>
 
-            <label for='search-term-state'>Search State</label>
-            <input type='text' name='search-term-state' id='js-search-term-state' maxlength='2' minlength='2' required>
+            <label for='search-term-state'>Search State/s</label>
+            <input type='text' name='search-term-state' id='js-search-term-state' required>
+
+            <label for='search-term-state' class='hidden adding-state'>Search State/s</label>
+            <input type='text' name='search-term-state' id='js-search-term-state' class='hidden adding-state'>            
 
             <label for='max-results'>Maximum Results to return</label>
             <input type='number' name='max-results' id='js-max-results' value='10'>
 
             <input type='submit' value='Search!'>
+            <!-- <input type='button' value='Add State' class='add-state'> -->
         </form>
 
         <p id='js-error-message' class='error-message'></p>

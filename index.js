@@ -24,10 +24,12 @@ function displayResults(responseJson) {
 }
 
 function getParkInfo(query, stateCode, maxResults=10) {
+  const states = $('#js-search-term-state').val().replace(' ', '');
   const params = {
     api_key: apiKey,
     q: query,
-    stateCode: $('#js-search-term-state').val(),
+    stateCode: states,
+    // stateCode: $('.adding-state').val(),
     limit: maxResults,
   };
   const queryString = formatQueryParams(params);
@@ -56,6 +58,14 @@ function watchForm() {
     const maxResults = $('#js-max-results').val();
     getParkInfo(searchTerm, searchState, maxResults);
   });
+//   addState();
 }
+
+// function addState() {
+//   $('.add-state').on('click', function() {
+//     $('.adding-state').removeClass('hidden');
+//     console.log('adding state');
+//   });
+// }
 
 $(watchForm);
